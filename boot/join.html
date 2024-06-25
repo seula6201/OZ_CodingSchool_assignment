@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--다크모드-->
+    <style>
+        :root {
+          --bg-color: #ffffff;
+          --text-color: #000000;
+        }
+        
+        [data-theme="dark"] {
+          --bg-color: #000000;
+          --text-color: #ffffff;
+        }
+        
+        body {
+          background-color: var(--bg-color);
+          color: var(--text-color);
+          font-family: Arial, sans-serif;
+          transition: background-color 0.3s, color 0.3s;
+        }
+    
+        .container {
+          text-align: center;
+          padding: 50px;
+        }
+    
+        .toggle-button {
+          padding: 10px 20px;
+          font-size: 16px;
+          cursor: pointer;
+          border: none;
+          border-radius: 5px;
+          background-color: var(--text-color);
+          color: var(--bg-color);
+          transition: background-color 0.3s, color 0.3s;
+        }
+      </style>
+      <!--다크모드 끝-->
+</head>
+<body>
+    <!--다크모드-->
+    <div class="container">
+        <button class="toggle-button" onclick="toggleDarkMode()">다크 모드</button>
+      </div>
+    
+      <script>
+        function toggleDarkMode() {
+          const body = document.body;
+          if (body.getAttribute('data-theme') === 'dark') {
+            body.setAttribute('data-theme', 'light');
+          } else {
+            body.setAttribute('data-theme', 'dark');
+          }
+        }
+      </script>
+    <!--다크모드 끝-->
+    <h1>회원가입</h1>
+    <br><br>
+    <label>ID</label>
+        <input type="blank" name="ID" placeholder="아이디를 입력하세요">
+        <br>
+        <br>
+    <label>PASSWORD</label>
+        <input type="password" name="PASSWORD" placeholder="비밀번호를 입력하세요">
+</body>
+</html>
